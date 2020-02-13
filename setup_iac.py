@@ -1,3 +1,7 @@
+"""
+This script is used to launch the cluster using the configurations provided here instead of using the GUI. 
+Once launched a separate config file is used to connect to the cluster and perform ETL.
+"""
 import configparser
 import pandas as pd
 import boto3
@@ -52,6 +56,6 @@ redshift = boto3.client('redshift',
                        aws_secret_access_key=SECRET
                        )
 
-sampleDbBucket =  s3.Bucket("awssampledbuswest2")
-for obj in sampleDbBucket.objects.filter(Prefix="ssbgz"):
-    print(obj)
+# sampleDbBucket =  s3.Bucket("awssampledbuswest2")
+# for obj in sampleDbBucket.objects.filter(Prefix="ssbgz"):
+#     print(obj)
